@@ -51,6 +51,7 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
           </li>
+          
         </ul>
       </div>
     </div>
@@ -71,8 +72,17 @@
           <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Looking to Hire</a>
           
         </div>
+
+        
       </div>
     </div>
+    <!-- <a class="btn btn-primary btn-xl js-scroll-trigger" href="#chat">chat</a> -->
+    <!-- Trigger/Open The Modal -->
+    <div class="chatbtn">
+        <button id="myBtn"><img src="../portfolio/assets/chat-speech-bubbles.png">
+        </button>
+          
+        </div>
   </header>
 
   <!-- About Section -->
@@ -173,7 +183,8 @@
                   </div>
                 </div>
               </div>
-                   
+             
+              
       </div>
     </div>
   </section>
@@ -201,7 +212,62 @@
         </div>
       </div>
     </div>
+    
+  </div>
+
+</div>
+
+    </div>
   </section>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+            <button id="clear" class="btn btn-warning" style="margin: auto; ">
+              clear
+            </button>
+    
+          <div id="status"></div>
+          <div id="chat" style="padding: 10px;">
+          <input type="text" id="username" class="form-control" placeholder="Enter name.....">
+            <div class="card" style="height: 300px;">
+              <div id="messages" class="card-block">
+    
+              </div>
+            </div>
+      <br>
+      <textarea id="textarea" class="form-control" placeholder="enter message"></textarea>
+        </div>
+        </div>
+      </div>
+   
+  
+  <!-- <section id="chat">
+    <div class="col-md-6 offset-md-3 col-sm-12">
+      <h1 class="text-center">
+        <button id="clear" class="btn btn-success">
+          clear
+        </button>
+
+      </h1>
+      <div id="status"></div>
+      <div id="chat">
+      <input type="text" id="username" class="form-control" placeholder="Enter name.....">
+        <div class="card" style="height: 300px;">
+          <div id="messages" class="card-block">
+
+          </div>
+        </div>
+  <br>
+  <textarea id="textarea" class="form-control" placeholder="enter message"></textarea>
+    </div>
+    </div>
+  </div>
+</div>
+
+  </section> -->
 
   <!-- Footer -->
   <footer class="bg-light py-5">
@@ -210,6 +276,100 @@
     </div>
   </footer>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+  <script>
+    (function(){
+      var element =function(id){
+        return document.getElementById(id);
+      }
+      var status = element('status');
+      var messages = element('messages');
+      var textarea = element('textarea');
+      var username = element('username');
+      var clearBtn = element('clear');
+
+      var statusDefault = status.textContent;
+      var setStatus = function(s){
+        status.textContent = s ;
+        if(s !== statusDefault){
+            var delay = setTimeout(function(){
+              setStatus(statusDefault);
+            }, 4000);
+        }
+      }
+      var socket = io.connect('http://127.0.0.1:4000');
+      if(socket !== undefined){
+        console.log('connected to socket');
+        socket.on('output',function(data){
+          console.log(data);
+          if(data.length){
+            for(var x=0; x< data.length;x++){
+              var message = document.createElement('div');
+              message.setAttribute('class', 'chat-message');
+              message.textContent = data[x].name+": "+data[x].message;
+              messages.appendChild(message);
+              messages.insertBefore(message,messages.firstChild);
+            }
+          }
+        });
+        socket.on('status',function(data){
+          setStatus((typeof data === 'object')? data.message:data);
+          if(data.clear){
+            textarea.value = '';
+          }
+        });
+
+        textarea.addEventListener('keydown',function(event){
+          if(event.which === 13 && event.shiftKey == false){
+            socket.emit('input',{
+              name:username.value,
+              message:textarea.value
+            });
+            event.preventDefault();
+          }
+        })
+        clearBtn.addEventListener('click',function(){
+          socket.emit('clear');
+        });
+        socket.on('cleared',function(){
+          messages.textContent = '';
+        });
+      }
+    })();
+
+	
+  </script>
+  <script>
+    // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+   
+  </script>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

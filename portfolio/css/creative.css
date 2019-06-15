@@ -91,6 +91,46 @@
     margin-top: 0;
     margin-bottom: 1rem;
   }
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+/* .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+} */
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
   
   abbr[title],
   abbr[data-original-title] {
@@ -102,6 +142,7 @@
     -webkit-text-decoration-skip-ink: none;
     text-decoration-skip-ink: none;
   }
+  
   
   address {
     margin-bottom: 1rem;
@@ -2637,6 +2678,10 @@
     background-color: transparent;
     border:solid 2px #fc0569;
   }
+ #clear .btn-primary:hover {
+  background-color:#fc0569 ;
+
+  }
 /*   
   .btn-primary:focus, .btn-primary.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(246, 88, 101, 0.5);
@@ -2771,17 +2816,32 @@
   }
   
   .btn-warning {
-    color: #212529;
-    background-color: #ffc107;
-    border-color: #ffc107;
+    color: #fff;
+    background-color: red;
+    border-color: red;
   }
   
   .btn-warning:hover {
-    color: #212529;
-    background-color: #e0a800;
-    border-color: #d39e00;
+    color: #fff;
+    background-color: red;
+    border-color: #fff;
   }
-  
+  .chatbtn{
+    margin-top: -57px;
+    margin-left: 90%;
+    display: flex;
+    position: fixed;
+
+  }
+  .chatbtn button{
+    background-color:#fc0569; 
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: solid 1px #fff;
+    color: #fff
+  }
+
   .btn-warning:focus, .btn-warning.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);
@@ -6218,13 +6278,17 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 100%;
+    width: 25%;
+    height: 500px;
     pointer-events: auto;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0.3rem;
     outline: 0;
+    float: right;
+    margin-right: 127px;
+
   }
   
   .modal-backdrop {
