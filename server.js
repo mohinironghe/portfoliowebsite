@@ -3,7 +3,7 @@
 const mongo = require('mongodb').MongoClient;
 
 
-const client =require('socket.io').listen(4000).sockets;
+const client =require('socket.io').listen(4000 || process.env.PORT).sockets;
 // Connection URL
 mongo.connect('mongodb://127.0.0.1/', function(err,db){
   if(err){
