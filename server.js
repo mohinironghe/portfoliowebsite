@@ -10,7 +10,7 @@ const mongo = require('mongodb').MongoClient;
 
 const client =require('socket.io').listen(4000).sockets;
 // Connection URL
-mongo.connect('mongodb://127.0.0.1/', function(err,db){
+mongo.connect(process.env.DATABASE_URL, function(err,db){
   if(err){
     throw err;
   }
