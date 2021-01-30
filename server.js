@@ -1,9 +1,14 @@
 
+const express = require('express')
+const path = require('path')
+const PORT = process.env.PORT || 5000
 
+express()
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 const mongo = require('mongodb').MongoClient;
 
 
-const client =require('socket.io').listen(4000 || process.env.PORT).sockets;
+const client =require('socket.io').listen(4000).sockets;
 // Connection URL
 mongo.connect('mongodb://127.0.0.1/', function(err,db){
   if(err){

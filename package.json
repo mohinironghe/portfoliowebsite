@@ -2,8 +2,12 @@
     "title": "Creative",
     "name": "startbootstrap-creative",
     "version": "5.1.6",
+    "engines": {
+        "node": "14.x",
+        "npm": "6.x"
+      },
     "scripts": {
-        "start": "gulp watch",
+        "start": "node server.js",
         "build":"webpack"
 
     },
@@ -23,12 +27,10 @@
     },
     "license": "MIT",
     "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (http://davidmiller.io/)"
-    ],
+    
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-creative.git"
+        "url": "https://github.com/mohinironghe/portfoliowebsite"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.8.2",
