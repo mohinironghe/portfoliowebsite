@@ -661,13 +661,15 @@
   
   .no-gutters {
     margin-right: 0;
-    margin-left: 60px;
+    /* margin-left: 60px; */
   }
   
   .no-gutters > .col,
   .no-gutters > [class*="col-"] {
-    padding-right: 0;
-    padding-left: 24%;
+    /* padding-left: 24%; */
+    padding-right: 0px;
+    padding-left: 22%;
+    margin-right: inherit;
   }
   
   .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
@@ -5428,7 +5430,29 @@
     color: #fff;
     background-color: #17a2b8;
   }
-  
+  @media screen and (min-width: 320px) {
+    .btn-xl{
+      margin-top: 5px;
+      margin-left: 0%;
+
+    }
+    .chatbtn button{
+      margin: -35px;
+
+    }
+    #about img{
+      width: -webkit-fill-available;
+
+    }
+    #portfolio .card{
+      position: relative;
+      left: 0px;
+      margin-left: 41%;
+
+
+    }
+    
+  }  
   a.badge-info:hover, a.badge-info:focus {
     color: #fff;
     background-color: #117a8b;
@@ -6278,7 +6302,7 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 25%;
+    width: auto;
     height: 500px;
     pointer-events: auto;
     background-color: #fff;
@@ -10668,11 +10692,13 @@
     font-weight: 700;
     text-transform: uppercase;
     border: none;
+    /* margin-left: 40%; */
+
     /* border-radius: 10rem; */
   }
   
   .page-section {
-    padding: 11rem 0;
+    padding: 11rem 0 0rem 0;
   }
   
   #mainNav {
@@ -10762,9 +10788,9 @@
     font-size: 1.25rem;
   }
   #about img{
-    width: 4in;
+    width: 3in;
     height: auto;
-    float: left;
+    /* float: left; */
   }
   
   .detail ul{
@@ -10854,9 +10880,9 @@
     opacity: 1;
   }
   #portfolio .card{
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: relative;
+    /* top: 50%; */
+    /* left: 30%; */
     transform:translate(-50%,-50%);
     width: 270px;
     height: 400px;

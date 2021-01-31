@@ -11,14 +11,14 @@
   <title>portfolio</title>
 
   <!-- Font Awesome Icons -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
   <!-- Plugin CSS -->
-  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="css/creative.css" rel="stylesheet">
@@ -79,7 +79,7 @@
     <!-- <a class="btn btn-primary btn-xl js-scroll-trigger" href="#chat">chat</a> -->
     <!-- Trigger/Open The Modal -->
     <div class="chatbtn">
-        <button id="myBtn"><img src="../portfolio/assets/chat-speech-bubbles.png">
+        <button id="myBtn"><img src="/assets/chat-speech-bubbles.png">
         </button>
           
         </div>
@@ -104,7 +104,7 @@
               <li><label>Phone</label>9637633177</li>
             </ul>
             <!-- <a class="btn btn-success btn-xl js-scroll-trigger" href="#">Resume</a> -->
-            <a class="btn btn-primary btn-xl" href="../startbootstrap-creative-gh-pages/assets/resume.pdf" download><i class="fa fa-download"></i> Download</a>
+            <a class="btn btn-primary btn-xl" href="/assets/resume.pdf" download><i class="fa fa-download"></i> Download</a>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@
       <div class="row no-gutters">
         <div class="col-lg-2 col-sm-4">
           <div class="card">
-            <div class="poster"><img src="../startbootstrap-creative-gh-pages/assets/project1.png"></div>
+            <div class="poster"><img src="/assets/project1.png"></div>
             <div class="details">
               <h4><span>SiteName:</span> <a href="https://www.munchpaksnackright.in/" target="_blank">https://www.munchpaksnackright.in/</a>
               </h4>
@@ -135,7 +135,7 @@
         </div>
         <div class="col-lg-2 col-sm-4">
             <div class="card">
-              <div class="poster"><img src="../startbootstrap-creative-gh-pages/assets/project2.png"></div>
+              <div class="poster"><img src="/assets/project2.png"></div>
               <div class="details">
                 <h4><span>SiteName:</span> <a href="#"></a>
                 </h4>
@@ -152,7 +152,7 @@
           </div>
           <div class="col-lg-2 col-sm-4">
               <div class="card">
-                <div class="poster"><img src="../startbootstrap-creative-gh-pages/assets/project3.png"></div>
+                <div class="poster"><img src="/assets/project3.png"></div>
                 <div class="details">
                   <h4><span>SiteName:</span> <a href="#">makeit3d2d</a>
                   </h4>
@@ -169,7 +169,7 @@
             </div>
             <div class="col-lg-2 col-sm-4">
                 <div class="card">
-                  <div class="poster"><img src="../startbootstrap-creative-gh-pages/assets/project4.png"></div>
+                  <div class="poster"><img src="/assets/project4.png"></div>
                   <div class="details">
                 <h4><span>SiteName:</span> <a href="https://github.com/mohinironghe/food">https://github.com/mohinironghe/food</a>
                  </h4>
@@ -298,7 +298,7 @@
             }, 4000);
         }
       }
-      var socket = io.connect('http://127.0.0.1:4000');
+      var socket = io.connect('https://mohiniportfolio.herokuapp.com/');
       if(socket !== undefined){
         console.log('connected to socket');
         socket.on('output',function(data){
@@ -371,15 +371,15 @@ window.onclick = function(event) {
    
   </script>
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
+  <script src="/js/creative.min.js"></script>
 
 </body>
 
