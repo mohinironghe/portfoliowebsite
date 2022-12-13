@@ -11,7 +11,7 @@
     "test": "node test.js"
   },
   "dependencies": {
-    "express": "4.17.1",
+    "express": "4.17.3",
     "mongodb": "^3.2.7",
     "socket.io": "2.2.0"
   },
